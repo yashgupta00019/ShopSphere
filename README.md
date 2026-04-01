@@ -1,129 +1,110 @@
-# GoldNest– Jewellery Discovery Web App
+# ShopSphere
 
-## Project Overview
+ShopSphere is a clean and modern shopping dashboard web app built with HTML, CSS, and Vanilla JavaScript. It fetches live product data from the public [DummyJSON Products API](https://dummyjson.com/products) and displays it in a responsive e-commerce dashboard layout with a featured section, category overview, and product cards.
 
-LuxeGems is a modern web application that allows users to explore and discover different types of jewellery products such as rings, necklaces, bracelets, and earrings.
+## Features
 
-The platform provides a clean and interactive interface where users can browse, search, filter, and sort jewellery items based on their preferences.
+- Live product data using `fetch()`
+- Modern dashboard-style layout
+- Featured products section based on top ratings
+- Product cards with image, title, price, discount, rating, and category
+- Loading and error states
+- Responsive design for mobile, tablet, and desktop
+- Future-ready structure for search, sorting, filters, cart, and wishlist
 
----
+## Project Structure
 
-## Purpose of the Project
+```text
+ShopSphere/
+├── index.html
+├── style.css
+├── script.js
+└── README.md
+```
 
-The goal of this project is to:
+## Tech Stack
 
-* Practice working with APIs
-* Build a structured frontend application
-* Implement features like search, filtering, and sorting
-* Create a visually appealing product-based website
+- HTML5
+- CSS3
+- Vanilla JavaScript
+- DummyJSON public API
 
----
+## How It Works
+
+1. The app loads and shows a loading state.
+2. JavaScript fetches product data from `https://dummyjson.com/products`.
+3. The top-rated products are shown in the Featured Products section.
+4. All products are rendered into the main dashboard grid.
+5. Category chips and quick stats are generated dynamically from the fetched data.
+
+## Run Locally
+
+Because this is a plain frontend project, you can run it very simply:
+
+1. Open [index.html](/Users/yashgupta/Desktop/project/index.html) directly in your browser.
+
+You can also use a local server if you prefer. For example:
+
+```bash
+python3 -m http.server 8000
+```
+
+Then open `http://localhost:8000`.
+
+## Main Files
+
+### [index.html](/Users/yashgupta/Desktop/project/index.html)
+
+Contains the dashboard structure:
+
+- Navbar
+- Sidebar
+- Hero section
+- Featured products section
+- Product grid
+- Loading and error states
+
+### [style.css](/Users/yashgupta/Desktop/project/style.css)
+
+Handles the full visual design:
+
+- Warm human-centered color palette
+- Responsive layout
+- Card styles
+- Hover effects
+- Typography and spacing
+- Custom ShopSphere branding
+
+### [script.js](/Users/yashgupta/Desktop/project/script.js)
+
+Handles the app logic:
+
+- Fetching products from the API
+- Rendering featured products
+- Rendering the product grid
+- Building category chips
+- Updating dashboard stats
+- Showing loading and error states
+
 ## API Used
 
-This project uses a **public product-based API** to fetch jewellery-related data.
-
-### Why this API?
-
-* Free and publicly accessible
-* Easy to integrate
-* Provides product data including:
-
-  * Title
-  * Price
-  * Description
-  * Image
-  * Category
-
-### Note
-
-Currently, there are no fully free public APIs dedicated exclusively to jewellery products. Therefore, a general product API is used and filtered to match jewellery-related items.
-
----
-
-## Features (Planned)
-
-### Search Functionality
-
-* Search jewellery by name
-
-### Filters
-
-* Filter by price range
-* Filter by category/type
-
-### Sorting
-
-* Sort by price (low to high / high to low)
-* Sort alphabetically
-
-### Product Display
-
-* Grid layout for products
-* Product cards with image, price, and description
-
-### Responsive Design
-
-* Works on mobile, tablet, and desktop
-
----
-
-## Technologies Used
-
-* HTML
-* CSS
-* JavaScript (React – depending on implementation)
-* REST API
-
----
-
-## Setup Instructions
-
-1. Clone the repository:
-
-```bash
-git clone https://github.com/your-username/luxegems.git
-```
-
-2. Navigate into the project folder:
-
-```bash
-cd luxegems
-```
-
-3. Open the project:
-
-* If using HTML/CSS/JS → open `index.html`
-* If using React → run:
-
-```bash
-npm install
-npm start
-```
-
----
-
-## 📂 Project Structure (Planned)
-
-```
-/luxegems
-  ├── index.html
-  ├── style.css
-  ├── script.js
-  ├── /components
-  ├── /assets
-```
-
----
+- Products endpoint: [https://dummyjson.com/products](https://dummyjson.com/products)
 
 ## Future Improvements
 
-* Add cart functionality
-* User authentication
-* Wishlist feature
-* Payment integration
+- Search functionality
+- Clickable category filters
+- Price sorting
+- Add to cart
+- Wishlist / favorites
+- Product details modal or page
 
----
+## Notes
+
+- No backend is used.
+- No frameworks are used.
+- The project is intentionally kept simple and readable for easy extension.
 
 ## Author
 
-Yash Gupta
+Built as a Vanilla JavaScript shopping dashboard project.

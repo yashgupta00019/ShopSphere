@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShopSphere | Shopping Dashboard</title>
+    <meta
+      name="description"
+      content="ShopSphere is a modern shopping dashboard built with HTML, CSS, and vanilla JavaScript using live product data."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand__mark" aria-hidden="true">
+            <span class="brand__orb brand__orb--yellow"></span>
+            <span class="brand__orb brand__orb--green"></span>
+            <span class="brand__glyph">S</span>
+          </div>
+          <div>
+            <p class="brand__eyebrow">User-Friendly Shopping Dashboard</p>
+            <h1>ShopSphere</h1>
+            <p class="brand__subcopy">Warm discovery for everyday shopping</p>
+          </div>
+        </div>
+
+        <nav class="topbar__actions" aria-label="Quick actions">
+          <span class="pill">Live Products</span>
+          <span class="pill pill--active" id="apiStatus">Connecting...</span>
+        </nav>
+      </header>
+
+      <main class="dashboard">
+        <aside class="sidebar">
+          <section class="sidebar__panel">
+            <p class="section-label">Browse</p>
+            <h2>Welcome back</h2>
+            <p class="sidebar__copy">
+              Explore products in a friendlier storefront that feels more like a
+              real shopping space, while still staying ready for filters, search,
+              sorting, cart, and wishlist features.
+            </p>
+          </section>
+
+          <section class="sidebar__panel">
+            <p class="section-label">Categories</p>
+            <div id="categoryList" class="category-list">
+              <button class="category-chip category-chip--active" type="button">
+                All Products
+              </button>
+            </div>
+          </section>
+
+          <section class="sidebar__panel sidebar__panel--stats">
+            <article>
+              <span>Total Products</span>
+              <strong id="productCount">0</strong>
+            </article>
+            <article>
+              <span>Featured Picks</span>
+              <strong id="featuredCount">0</strong>
+            </article>
+            <article>
+              <span>Top Category</span>
+              <strong id="topCategory">Loading</strong>
+            </article>
+          </section>
+        </aside>
+
+        <div class="content">
+          <section class="hero-card">
+            <div>
+              <p class="section-label">Curated For You</p>
+              <h2>Shop with a warmer, more personal dashboard experience.</h2>
+              <p class="hero-card__copy">
+                Featured picks come forward first, categories stay easy to scan,
+                and the overall UI feels more natural, welcoming, and human on
+                desktop, tablet, and mobile.
+              </p>
+            </div>
+
+            <div class="hero-card__meta">
+              <div class="metric-card">
+                <span>Data Source</span>
+                <strong>Live Jewellery Product Feed</strong>
+              </div>
+              <div class="metric-card">
+                <span>Experience</span>
+                <strong>Seamless Product Discovery</strong>
+              </div>
+              <div class="metric-card">
+                <span>Features</span>
+                <strong>Search • Filters • Smart Sorting</strong>
+              </div>
+            </div>
+          </section>
+
+          <section class="featured-section">
+            <div class="section-header">
+              <div>
+                <p class="section-label">Featured Products</p>
+                <h2>Top rated picks</h2>
+              </div>
+              <p class="section-copy">
+                A highlighted row of standout products selected from the live feed.
+              </p>
+            </div>
+
+            <div id="featuredProducts" class="featured-grid"></div>
+          </section>
+
+          <section class="products-section">
+            <div class="section-header">
+              <div>
+                <p class="section-label">Product Listings</p>
+                <h2>Shop all products</h2>
+              </div>
+              <p class="section-copy" id="productSummary">
+                Loading products...
+              </p>
+            </div>
+
+            <div id="loadingState" class="status-card" aria-live="polite">
+              <div class="loader" aria-hidden="true"></div>
+              <p>Loading products...</p>
+            </div>
+
+            <div id="errorState" class="status-card status-card--error hidden" role="alert">
+              <p>Unable to load products right now. Please try again later.</p>
+            </div>
+
+            <div id="productGrid" class="product-grid hidden"></div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
